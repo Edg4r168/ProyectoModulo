@@ -1,0 +1,91 @@
+﻿@model Administrador
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/css/index.css" rel="stylesheet" />
+    <link href="~/css/login.css" rel="stylesheet" />
+    <title>Iniciar sesión</title>
+</head>
+<body>
+    <section class="login">
+        <header>
+            <div class="info-header">
+                <h2>Hola, Bienvenido</h2>
+                <p>Ingrese sus credenciales para continuar</p>
+            </div>
+        </header>
+
+        <main>
+            <form asp-action="Login" asp-controller="Administrador">
+                <div class="fields-container">
+                    <label for="username">
+                        <small>Email Addres / Username</small>
+                        <input type="text" asp-for="UserName" id="username" />
+                    </label>
+
+                    <label for="password">
+                        <small>Password</small>
+                        <input type="password" asp-for="Password" id="password" />
+
+                        <button type="button" class="btn-hidde-show-pwd">
+                            <input type="checkbox" id="checkbox-pwd" />
+                            <svg class="hidden-pwd"
+                                 focusable="false"
+                                 aria-hidden="true"
+                                 viewBox="0 0 24 24">
+                                <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7M2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2m4.31-.78 3.15 3.15.02-.16c0-1.66-1.34-3-3-3z"></path>
+                            </svg>
+
+                            <svg class="show-pwd"
+                                 focusable="false"
+                                 aria-hidden="true"
+                                 viewBox="0 0 24 24">
+                                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5M12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5m0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path>
+                            </svg>
+                        </button>
+                    </label>
+                </div>
+
+                <div class="options-container">
+                    <label for="keep-session">
+                        <span class="keep-session-container">
+                            <input type="checkbox" asp-for="KeepLoggedIn" name="keep-session" id="keep-session" />
+                        </span>
+
+                        Mantener sesión
+                    </label>
+
+                    <a class="link-forgot-pwd" href="#">¿Olvido su contraseña?</a>
+                </div>
+
+                <button>Iniciar sesión</button>
+
+                <hr />
+
+                <a class="link-create-account" href="#">¿No tienes cuenta?</a>
+            </form>
+        </main>
+    </section>
+
+    <script type="module">
+        // mostrar y ocultar contraseña
+        const $checkboxPwd = document.getElementById("checkbox-pwd");
+        const $password = document.getElementById("password");
+
+        $checkboxPwd.addEventListener("change", () => {
+            if ($checkboxPwd.checked) {
+                $password.type = "text";
+            } else {
+                $password.type = "password";
+            }
+        });
+    </script>
+</body>
+</html>

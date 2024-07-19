@@ -1,0 +1,279 @@
+﻿:root {
+    --text-color: rgb(132, 146, 196);
+    --input-bg: rgb(26, 34, 63);
+}
+
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 30px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 28px;
+    height: 500px;
+    width: 100%;
+    max-width: 400px;
+    padding: 24px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+}
+
+    .login header {
+        .info-header
+
+{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+}
+
+h2 {
+    color: var(--color-purple);
+}
+
+p {
+    color: var(--color-text-tertiary);
+    font-weight: 500;
+}
+
+}
+
+.login main {
+    color: var(--color-text-primary);
+    --distance: 20px;
+    form
+
+{
+    display: flex;
+    flex-direction: column;
+    gap: var(--distance);
+    button
+
+{
+    height: 42px;
+    padding: 8px 22px;
+    margin: 0;
+    border: 0;
+    background-color: var(--color-purple);
+    border-radius: 4px;
+    color: inherit;
+    font-size: 15px;
+    box-shadow: var(--base-box-shadow);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    &:hover
+
+{
+    background-color: var(--color-purple-dark);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+}
+
+.link-create-account {
+    margin: 0 auto;
+    color: var(--color-text-tertiary);
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .link-forgot-pwd
+
+{
+    height: fit-content;
+    color: var(--color-purple);
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: var(--color-text-tertiary);
+    /* diseño visual del checkbox. */
+    .keep-session-container::before
+
+{
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    border: 2px solid #7f8fff;
+    border-radius: 4px;
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.keep-session-container {
+    position: relative;
+    box-sizing: content-box;
+    display: grid;
+    place-content: center;
+    height: 24px;
+    width: 24px;
+    padding: 9px;
+    border-radius: 50%;
+    &:hover
+
+{
+    background-color: #2195f31f;
+}
+
+&:has(:checked) {
+    /* dibujar marca de verificación */
+    &::after
+
+{
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid var(--color-bg-tertiary);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+&::before {
+    background-color: var(--color-blue);
+    border-color: var(--color-blue);
+}
+
+}
+
+#keep-session {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+}
+}
+}
+}
+
+.fields-container {
+    display: flex;
+    flex-flow: wrap;
+    gap: var(--distance);
+    label
+
+{
+    position: relative;
+    display: flex;
+    height: 62px;
+    width: 100%;
+    padding: 12px 14px;
+    background-color: var(--color-bg-secondary);
+    border-radius: 8px;
+    border: 1px solid #444b6e;
+    &:hover
+
+{
+    border: 1px solid var(--color-text-primary);
+    cursor: text;
+}
+
+&:has(input:focus) {
+    border: 2px solid var(--color-blue);
+    small
+
+{
+    color: var(--color-blue);
+}
+
+}
+
+small {
+    position: absolute;
+    font-size: 12px;
+    color: var(--color-text-tertiary);
+    pointer-events: none;
+}
+
+input {
+    align-self: flex-end;
+    width: 100%;
+    height: 20px;
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    &:focus
+
+{
+    outline: none;
+}
+
+}
+
+.btn-hidde-show-pwd {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    box-sizing: content-box;
+    height: 24px;
+    width: 24px;
+    padding: 12px;
+    border: 0;
+    border-radius: 9999px;
+    background-color: transparent;
+    box-shadow: none;
+    transition: background-color 0.3s ease;
+    &:has(:hover)
+
+{
+    background-color: var(--color-bg-tertiary);
+}
+
+#checkbox-pwd {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.hidden-pwd,
+.show-pwd {
+    height: 24px;
+}
+
+.show-pwd {
+    display: none;
+}
+
+&:has(:checked) {
+    .show-pwd
+
+{
+    display: initial;
+}
+
+.hidden-pwd {
+    display: none;
+}
+
+}
+}
+}
+}
+}

@@ -1,0 +1,505 @@
+﻿*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    padding: 16px;
+    background-color: var(--color-bg-primary);
+    border-radius: 8px;
+    color: var(--color-text-secondary);
+
+    .button
+{
+    display: inline-block;
+    height: 42px;
+    padding: 8px 22px;
+    margin: 0;
+    border: 0;
+    border-radius: 4px;
+    color: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: var(--base-box-shadow);
+    background-color: var(--color-blue);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    &:hover
+
+{
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--color-blue-grey);
+}
+}
+}
+
+svg,
+hr {
+    pointer-events: none;
+}
+
+hr {
+    margin: 0;
+    border-width: 0 0 thin;
+    border-color: rgba(227, 232, 239, 0.2);
+}
+
+/* Estilos personalizados para el scrollbar */
+.custom-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Parte del scrollbar que se mueve.*/
+.custom-scroll::-webkit-scrollbar-thumb {
+    background-color: #444b6e;
+    border-radius: 10px;
+    border: 2px solid transparent;
+}
+
+    .custom-scroll::-webkit-scrollbar-thumb:hover {
+        background-color: #5a6186;
+    }
+
+.native-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #444b6e transparent; /* Color del thumb y del track */
+}
+
+:root {
+    --color-bg-primary: #121936;
+    --color-bg-secondary: #1b223e;
+    --color-bg-tertiary: rgb(41, 49, 79);
+    --color-text-primary: #f8fafc;
+    --color-text-secondary: #d7dcec;
+    --color-text-tertiary: rgb(176, 187, 226);
+    --color-purple: #7c4dff;
+    --color-purple-dark: rgb(101, 31, 255);
+    --color-red: #f44336;
+    --color-red-dark: rgba(244, 67, 54, 0.5);
+    --color-blue: #2196f3;
+    --color-blue-grey: rgb(30, 136, 229);
+    --color-item-hover-bg: rgb(32, 32, 84);
+    --card-bg: rgb(33, 41, 70);
+    --base-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    --width-aside: 260px;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+    background-color: var(--color-bg-primary);
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: var(--width-aside) 1fr 1fr;
+    grid-template-rows: 12vh 1fr;
+    grid-template-areas:
+        "header header header"
+        "aside main main";
+    height: 100vh;
+    height: 100dvh;
+    transition: grid-template-columns 0.3s ease;
+    &.aside-small
+
+{
+    --width-aside: 72px;
+}
+
+}
+
+.wrapper header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 24px;
+    .logo-container
+
+{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 246px;
+    color: var(--color-text-primary);
+    logo
+
+{
+    width: 40px;
+}
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    #btn-deploySidebar
+
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    color: var(--color-purple);
+    background-color: var(--color-bg-tertiary);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    &:hover
+
+{
+    background-color: var(--color-purple);
+    color: var(--color-text-primary);
+}
+
+}
+
+.menu-container {
+    position: relative;
+    .menu
+
+{
+    position: absolute;
+    top: 60px;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    min-height: 90px;
+    padding: 10px 8px;
+    background-color: #222946;
+    border-radius: 8px;
+    color: var(--color-text-secondary);
+    opacity: 0;
+    transition: clip-path 0.1s ease, opacity 0.2s ease;
+    clip-path: polygon( 100% 0, 100% 0, 100% 0, 100% 0, 100% 0, 100% 0, 100% 0, 100% 0 );
+    .menu-item
+
+{
+    position: relative;
+    height: 46px;
+    border-radius: 8px;
+    color: var(--color-text-tertiary);
+    cursor: pointer;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+    &:hover
+
+{
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-secondary);
+}
+
+a {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 16px;
+    color: inherit;
+    span
+
+{
+    padding-bottom: 1px;
+}
+
+}
+}
+
+hr {
+    margin: 6px;
+}
+
+}
+
+#input-toggleMenu:checked ~ .menu {
+    opacity: 1;
+    clip-path: polygon( 20% 0%, 100% 0, 100% 20%, 100% 100%, 80% 100%, 20% 100%, 0 100%, 0 0 );
+}
+
+#input-toggleMenu {
+    display: none;
+    margin: 0;
+    &:checked ~ .deployMenu
+
+{
+    background-color: var(--color-blue);
+}
+
+&:checked ~ .deployMenu .icon-config {
+    color: var(--color-text-primary);
+}
+
+}
+
+.deployMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 89.6px;
+    height: 48px;
+    border-width: 0;
+    padding: 8px;
+    border-radius: 27px;
+    background-color: var(--color-bg-tertiary);
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
+    &:hover
+
+{
+    background-color: var(--color-blue);
+}
+
+img {
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+}
+
+.icon-config {
+    color: #1e88e5;
+    transition: color 0.2s ease-in-out;
+}
+
+&:hover .icon-config {
+    color: var(--color-text-primary);
+}
+
+}
+}
+}
+}
+
+.wrapper aside {
+    grid-area: aside;
+    padding: 0 16px 16px;
+    overflow-y: auto;
+    .nav-list
+
+{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    .nav-title
+
+{
+    margin: 10px 0;
+    padding: 0 6px;
+    color: var(--color-text-secondary);
+}
+
+--nav-item-height: 46px;
+
+.nav-item {
+    position: relative;
+    min-height: var(--nav-item-height);
+    width: 228px;
+    border-radius: 8px;
+    color: var(--color-text-tertiary);
+    cursor: pointer;
+    span
+
+{
+    pointer-events: none;
+    padding-bottom: 1px;
+}
+
+&:hover,
+&:has(.nav-link.active) {
+    color: var(--color-purple);
+    background-color: var(--color-item-hover-bg);
+}
+
+.nav-link {
+    position: absolute;
+    width: 100%;
+    height: var(--nav-item-height);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 16px 10px 24px;
+    color: inherit;
+}
+
+}
+}
+
+.submenu {
+    background-color: #1e88e5;
+}
+
+ul:first-child h4:first-child {
+    margin-top: 0;
+}
+
+hr {
+    margin: 15.6px 0 8px;
+    border-width: 0 0 thin;
+    border-color: rgba(227, 232, 239, 0.2);
+}
+
+&.aside-small {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 10px;
+    .nav-list
+
+{
+    .nav-title
+
+{
+    display: none;
+}
+
+.nav-item {
+    position: initial;
+    width: 46px;
+    .nav-link
+
+{
+    position: initial;
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+    animation: appear 0.3s ease;
+}
+
+span {
+    position: absolute;
+    left: 74px;
+    padding: 8px;
+    background-color: rgb(215, 220, 236);
+    border-radius: 4px;
+    color: black;
+    font-size: 12px;
+    opacity: 0;
+    &::before
+
+{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -8px;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent rgb(215, 220, 236) transparent transparent;
+}
+
+}
+
+&:hover {
+    span
+
+{
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
+
+}
+}
+}
+
+hr {
+    display: none;
+}
+
+}
+
+}
+
+.wrapper main {
+    grid-area: main;
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 8px 8px 0px 0px;
+    background-color: var(--color-bg-secondary);
+    overflow: auto;
+}
+
+.button {
+    display: inline-block;
+    height: 42px;
+    padding: 8px 22px;
+    margin: 0;
+    border: 0;
+    border-radius: 4px;
+    color: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: var(--base-box-shadow);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    &:hover
+
+{
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+&.primary {
+    background-color: var(--color-blue);
+    &:hover
+
+{
+    background-color: var(--color-blue-grey);
+}
+
+}
+
+&.danger {
+    background-color: rgba(255, 0, 0, 0.05);
+    color: var(--color-red);
+    &:hover
+
+{
+    background-color: rgba(255, 0, 0, 0.147);
+}
+
+}
+}
+
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

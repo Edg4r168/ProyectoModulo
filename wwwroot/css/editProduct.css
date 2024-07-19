@@ -1,0 +1,199 @@
+﻿.section-edit {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+
+    --distance: 20px;
+    --bg-form: rgb(33, 41, 70);
+    form
+
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--distance);
+    width: 100%;
+    max-width: 900px;
+    margin: 0;
+    padding: 24px;
+    color: var(--color-text-primary);
+    background-color: var(--bg-form);
+    border-radius: 8px;
+    box-shadow: var(--base-box-shadow);
+    .button
+
+{
+    display: inline-block;
+    height: 42px;
+    padding: 8px 22px;
+    margin: 0;
+    border: 0;
+    border-radius: 4px;
+    color: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: var(--base-box-shadow);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    &:hover
+
+{
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+&.primary {
+    background-color: var(--color-blue);
+    &:hover
+
+{
+    background-color: var(--color-blue-grey);
+}
+
+}
+
+&.danger {
+    background-color: rgba(255, 0, 0, 0.05);
+    color: var(--color-red);
+    &:hover
+
+{
+    background-color: rgba(255, 0, 0, 0.147);
+}
+
+}
+}
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    img
+
+{
+    width: 100%;
+    max-height: 390px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+}
+
+.image-upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 80px;
+    border: 0;
+    color: var(--color-text-tertiary);
+    background-color: var(--color-bg-primary);
+    border-radius: 8px;
+    &:hover
+
+{
+    cursor: pointer;
+    border: 0;
+}
+
+.icon-upload {
+    height: 30px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#name-image {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+}
+}
+
+.fields-container {
+    display: grid;
+    grid-auto-rows: min-content;
+    place-content: center;
+    gap: var(--distance);
+    label
+
+{
+    position: relative;
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    background-color: var(--color-bg-primary);
+    border-radius: 8px;
+    padding: 24px 14px;
+    &:hover
+
+{
+    cursor: text;
+}
+
+&:has(input:focus),
+&:has(textarea:focus) {
+    border: 0;
+}
+
+&:has(textarea) {
+    padding: 14px 10px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 44px;
+    background-color: transparent;
+    border: 0;
+    resize: vertical;
+    color: inherit;
+    &:focus
+
+{
+    outline: 0;
+}
+
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    &:focus
+
+{
+    outline: none;
+}
+
+}
+
+#price {
+    color: var(--color-blue);
+    font-size: 18px;
+}
+
+}
+
+.form-group {
+    display: flex;
+    gap: var(--distance);
+    label
+
+{
+    height: 56px;
+    padding: 16px 14px;
+}
+
+}
+
+.btn-container {
+    padding-top: 24px;
+}
+
+}
+}
